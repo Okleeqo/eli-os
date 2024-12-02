@@ -1,0 +1,81 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  :root {
+    --card-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.1), 0 2px 4px -1px rgba(0, 0, 0, 0.06);
+    --card-shadow-hover: 0 10px 15px -3px rgba(0, 0, 0, 0.1), 0 4px 6px -2px rgba(0, 0, 0, 0.05);
+  }
+
+  .dark {
+    --card-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.2), 0 2px 4px -1px rgba(0, 0, 0, 0.12);
+    --card-shadow-hover: 0 10px 15px -3px rgba(0, 0, 0, 0.2), 0 4px 6px -2px rgba(0, 0, 0, 0.1);
+  }
+
+  body {
+    @apply bg-gray-50 dark:bg-gray-900 text-gray-900 dark:text-white transition-colors duration-200;
+  }
+}
+
+@layer components {
+  .btn-primary {
+    @apply inline-flex items-center px-6 py-3 bg-gradient-to-r from-emerald-400 to-emerald-600 text-white rounded-xl font-medium shadow-lg hover:shadow-xl transform hover:scale-105 transition-all duration-200;
+  }
+
+  .btn-secondary {
+    @apply inline-flex items-center px-6 py-3 bg-gray-100 dark:bg-gray-800 text-gray-700 dark:text-gray-300 rounded-xl font-medium shadow-md hover:shadow-lg transform hover:scale-105 transition-all duration-200;
+  }
+
+  .card {
+    @apply bg-white dark:bg-gray-800 rounded-3xl shadow-lg p-8 border border-gray-200 dark:border-gray-700;
+  }
+
+  .card-gradient-orange {
+    @apply bg-gradient-to-br from-orange-50 to-amber-50 border-orange-100;
+  }
+
+  .card-gradient-emerald {
+    @apply bg-gradient-to-br from-emerald-50 to-green-50 border-emerald-100;
+  }
+
+  .card-gradient-blue {
+    @apply bg-gradient-to-br from-blue-50 to-indigo-50 border-blue-100;
+  }
+
+  .input {
+    @apply w-full px-4 py-3 rounded-xl border border-gray-300 focus:ring-2 focus:ring-emerald-500 focus:border-transparent dark:bg-gray-700 dark:text-white dark:border-gray-600;
+  }
+
+  .label {
+    @apply block text-sm font-medium text-gray-700 dark:text-gray-300 mb-2;
+  }
+
+  .section-title {
+    @apply text-2xl font-bold text-gray-900 dark:text-white mb-2;
+  }
+
+  .section-description {
+    @apply text-gray-600 dark:text-gray-400;
+  }
+}
+
+/* Glossy effect */
+.glossy {
+  background: linear-gradient(
+    135deg,
+    rgba(255, 255, 255, 0.1) 0%,
+    rgba(255, 255, 255, 0.05) 100%
+  );
+  backdrop-filter: blur(10px);
+}
+
+/* Card hover effects */
+.card-hover {
+  @apply transform hover:scale-[1.02] transition-all duration-200;
+}
+
+/* Input focus styles */
+.input-focus {
+  @apply focus:ring-2 focus:ring-offset-2 focus:ring-emerald-500 focus:border-transparent;
+}
